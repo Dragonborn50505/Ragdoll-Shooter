@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class PlayerCameraScript : MonoBehaviour
 {
     [SerializeField] private float m_cameraSensetivityX;
     [SerializeField] private float m_cameraSensetivityY;
@@ -21,10 +21,12 @@ public class PlayerCamera : MonoBehaviour
     void Update()
     {
         m_mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * m_cameraSensetivityX;
-        m_mouseX = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * m_cameraSensetivityY;
+        m_mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * m_cameraSensetivityY;
 
         m_RotationY += m_mouseX;
         m_RotationX -= m_mouseY;
+        //m_RotationY += m_mouseY;
+        ////m_RotationX -= m_mouseX;
 
         m_RotationX = Mathf.Clamp(m_RotationX, -90f, 90f);
 

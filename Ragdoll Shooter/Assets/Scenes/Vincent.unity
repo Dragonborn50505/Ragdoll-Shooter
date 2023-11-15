@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -303,6 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 217538663}
   - component: {fileID: 217538664}
+  - component: {fileID: 217538665}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -350,11 +351,34 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &217538665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217538662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1aa42ac6111af40a08938ba93e373e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moveSpeed: 7
+  m_groundDrag: 5
+  m_jumpForce: 12
+  m_jumpCooldown: 0.25
+  m_airMultiplier: 4
+  jumpKey: 32
+  m_playerHeight: 0
+  m_groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_orientation: {fileID: 0}
 --- !u!1 &511432162
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,8 +483,8 @@ GameObject:
   - component: {fileID: 695733818}
   - component: {fileID: 695733817}
   - component: {fileID: 695733816}
-  m_Layer: 0
-  m_Name: TempGround
+  m_Layer: 6
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -580,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 798205908}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -598,8 +622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f24efa43eabb946a4d34015a79482f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cameraSensetivityX: 400
-  m_cameraSensetivityY: 400
+  m_cameraSensetivityX: 600
+  m_cameraSensetivityY: 600
   m_playerOrientation: {fileID: 59833166}
 --- !u!20 &798205912
 Camera:
