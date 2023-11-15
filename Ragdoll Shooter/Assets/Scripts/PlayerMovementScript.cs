@@ -11,16 +11,14 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float m_jumpCooldown;
     [SerializeField] private float m_airMultiplier;
     private bool m_readyToJump;
-
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-
+    
     [Header("Ground")]
     [SerializeField] private float m_playerHeight;
     [SerializeField] private LayerMask m_groundLayer;
     private bool m_grounded;
 
     [SerializeField] private Transform m_orientation;
+    private KeyCode jumpKey = KeyCode.Space;
     private float m_horizontalInput;
     private float m_verticalInput;
 
